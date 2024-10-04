@@ -21,7 +21,7 @@ const Update = () => {
     };
 
     useEffect(()=>{
-        axios.get(`http://localhost:8000/api/user/${id}`).then((response)=>{
+        axios.get(`http://localhost:7000/api/user/${id}`).then((response)=>{
             setUser(response.data)
         }).catch((error)=>{
             console.log(error)
@@ -30,7 +30,7 @@ const Update = () => {
 
     const submitForm = async(e)=>{
         e.preventDefault();
-        await axios.put(`http://localhost:8000/api/update/user/${id}`, user).then((response)=>{
+        await axios.put(`http://localhost:7000/api/update/user/${id}`, user).then((response)=>{
             console.log("User updated Successfully!")
             toast.success(response.data.message, {position:"top-right"})
             navigate("/")

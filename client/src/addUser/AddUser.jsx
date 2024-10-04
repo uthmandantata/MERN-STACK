@@ -21,7 +21,7 @@ const AddUser = () => {
 
     const submitForm = async(e)=>{
         e.preventDefault();
-        await axios.post("http://localhost:8000/api/user", user).then((response)=>{
+        await axios.post("http://localhost:7000/api/user", user).then((response)=>{
             console.log("User created Successfully!")
             toast.success(response.data.message, {position:"top-right"})
             navigate("/")

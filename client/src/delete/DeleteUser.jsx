@@ -14,7 +14,7 @@ const DeleteUser = () => {
     const {id} = useParams();
 
     useEffect(()=>{
-        axios.get(`http://localhost:8000/api/user/${id}`).then((response)=>{
+        axios.get(`http://localhost:7000/api/user/${id}`).then((response)=>{
             setUser(response.data)
         }).catch((error)=>{
             console.log(error)
@@ -23,7 +23,7 @@ const DeleteUser = () => {
 
     const submitForm = async(e)=>{
         e.preventDefault();
-        await axios.delete(`http://localhost:8000/api/delete/user/${id}`, user).then((response)=>{
+        await axios.delete(`http://localhost:7000/api/delete/user/${id}`, user).then((response)=>{
             console.log("User Deleted Successfully!")
             toast.success(response.data.message, {position:"top-right"})
             navigate("/")
